@@ -25,7 +25,7 @@ public class Bullet {
     }
 
     private void Update(float deltaTime) {
-        if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
+        if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE) && bullet_position.y > Gdx.graphics.getHeight()) {
             bullet_position = new Vector2(player_position.x + player_sprite.getWidth() / 4, player_position.y);
         }
 

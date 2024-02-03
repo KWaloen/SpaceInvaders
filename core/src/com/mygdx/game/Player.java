@@ -15,9 +15,8 @@ public class Player {
 
     public Player(Texture img) {
         sprite = new Sprite(img);
-        position = new Vector2((float) Gdx.graphics.getWidth() / 2, (float) Gdx.graphics.getHeight() / 8);
+        position = new Vector2((float) Gdx.graphics.getWidth() / 2, (float) Gdx.graphics.getHeight() / 25);
         sprite.setSize(40, 40);
-
     }
 
     public void Update(float deltaTime) {
