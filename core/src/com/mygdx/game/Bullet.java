@@ -10,7 +10,7 @@ import com.badlogic.gdx.math.Vector2;
 public class Bullet {
 
     private Vector2 bullet_position;
-    private Sprite sprite_bullet;
+    public Sprite sprite_bullet;
     private float speed_bullet = 1000;
     private Vector2 player_position;
     private Sprite player_sprite;
@@ -20,7 +20,7 @@ public class Bullet {
         sprite_bullet = new Sprite(img_bullet);
         this.player_sprite = player.sprite;
         bullet_position = new Vector2(player.position.x + player.sprite.getWidth()/4, player.position.y);
-        sprite_bullet.setSize(20, 50);
+        sprite_bullet.setSize(10, 50);
 
     }
 
@@ -30,6 +30,10 @@ public class Bullet {
         }
 
         bullet_position.y += deltaTime*speed_bullet;
+    }
+
+    public void breakBullet() {
+        bullet_position.y = Gdx.graphics.getHeight() + 1;
     }
 
     public void Draw(SpriteBatch batch) {

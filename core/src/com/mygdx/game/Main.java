@@ -24,7 +24,6 @@ public class Main extends ApplicationAdapter {
     int spacing_aliens = 50;
 
 
-
     @Override
     public void create() {
         batch = new SpriteBatch();
@@ -49,9 +48,18 @@ public class Main extends ApplicationAdapter {
     }
 
     private void alienRender() {
-        for (int i = 0; i < alienHordeDimension; i++) {
-           alienList[i].Draw(batch);
 
+        for (int i = 0; i < alienHordeDimension; i++) {
+            if (bullet.sprite_bullet.getBoundingRectangle().overlaps(alienList[i].sprite.getBoundingRectangle()) && alienList[i].Alive) {
+                alienList[i].Alive = false;
+                bullet.breakBullet();
+
+            }
+        }
+        for (int i = 0; i < alienHordeDimension; i++) {
+            if (alienList[i].Alive) {
+                alienList[i].Draw(batch);
+            }
         }
     }
 
@@ -62,8 +70,8 @@ public class Main extends ApplicationAdapter {
         for (int y = 0; y < NumHeight_aliens; y++) {
             for (int x = 0; x < NumWidth_aliens; x++) {
                 Vector2 position = new Vector2(x * spacing_aliens, y * spacing_aliens);
-                position.x += Gdx.graphics.getWidth() /3;
-                position.y += Gdx.graphics.getHeight() - 100 ;
+                position.x += Gdx.graphics.getWidth() / 3;
+                position.y += Gdx.graphics.getHeight() - 100;
                 position.x -= (NumHeight_aliens / 2 * spacing_aliens);
                 position.y -= NumHeight_aliens * spacing_aliens;
                 alienList[i] = new Alien(position, alien_img);
