@@ -70,6 +70,10 @@ public class Main extends ApplicationAdapter {
         for (int y = 0; y < NumHeight_aliens; y++) {
             for (int x = 0; x < NumWidth_aliens; x++) {
                 Vector2 position = new Vector2(x * spacing_aliens, y * spacing_aliens);
+                System.out.println("x " + position.x + " y " + position.y);
+
+                //centering the grid of aliens to the starting point of X: 250 and Y:500
+
                 position.x += 250;
                 position.y += 500;
                 alienList[i] = new Alien(position, alien_img);

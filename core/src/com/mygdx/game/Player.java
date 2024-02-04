@@ -22,12 +22,10 @@ public class Player {
     public void Update(float deltaTime) {
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT) && position.x > 0) {
             position.x -= deltaTime*playerSpeed;
-            System.out.println("x " + position.x);
         }
 
         if (Gdx.input.isKeyPressed(Input.Keys.RIGHT) && position.x < Gdx.graphics.getWidth() - sprite.getWidth()) {
             position.x += deltaTime*playerSpeed;
-            System.out.println("x " + position.x);
         }
     }
 
