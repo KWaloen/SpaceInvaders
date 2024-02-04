@@ -70,10 +70,8 @@ public class Main extends ApplicationAdapter {
         for (int y = 0; y < NumHeight_aliens; y++) {
             for (int x = 0; x < NumWidth_aliens; x++) {
                 Vector2 position = new Vector2(x * spacing_aliens, y * spacing_aliens);
-                position.x += Gdx.graphics.getWidth() / 3;
-                position.y += Gdx.graphics.getHeight() - 100;
-                position.x -= (NumHeight_aliens / 2 * spacing_aliens);
-                position.y -= NumHeight_aliens * spacing_aliens;
+                position.x += 250;
+                position.y += 500;
                 alienList[i] = new Alien(position, alien_img);
                 i++;
             }
